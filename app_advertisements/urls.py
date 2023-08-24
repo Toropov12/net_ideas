@@ -10,6 +10,5 @@ urlpatterns = [
     path('top-sellers', top_sellers, name='top-sellers'),
     path('advertisement-post/', advertisement_post, name='adv-post')
 ]
-
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

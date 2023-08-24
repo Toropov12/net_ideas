@@ -14,6 +14,7 @@ def top_sellers(request):
 @login_required(login_url=reverse_lazy('login'))
 def advertisement_post(request):
     if request.method == 'POST':
+
         form = AdvertisementForm(request.POST, request.FILES)
         if form.is_valid():
             advertisements = Advertisements(**form.cleaned_data)
@@ -26,4 +27,3 @@ def advertisement_post(request):
     context = {'form': form}
     return render(request, 'app_advertisements/advertisement-post.html', context)
 
-# Create your views here.

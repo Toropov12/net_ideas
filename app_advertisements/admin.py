@@ -31,6 +31,3 @@ class AdvertisementAdmin(admin.ModelAdmin):
 
 admin.site.register(Advertisements, AdvertisementAdmin)
 
-
-
-# Register your models here.

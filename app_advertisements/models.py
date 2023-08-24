@@ -33,12 +33,12 @@ class Advertisements(models.Model):
     @admin.display(description='дата последнего обновления')
     def updated_date(self):
         from django.utils import timezone
-        if self.update_at.date() == timezone.now().date():
-            created_time = self.update_at.time().strftime("%H:%M:%S")
+        if self.updated_at.date() == timezone.now().date():
+            created_time = self.updated_at.time().strftime("%H:%M:%S")
             return format_html(
                 '<span style="color: green; font-weight: bold;">Сегодня в {}</span>', created_time
             )
-        return self.update_at.strftime("%d.%m.%Y в %H:%M:%S")
+        return self.updated_at.strftime("%d.%m.%Y в %H:%M:%S")
 
     @admin.display(description='фото')
     def get_html_image(self):

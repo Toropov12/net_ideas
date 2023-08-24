@@ -1,5 +1,4 @@
 from django import forms
-
 class AdvertisementForm(forms.Form):
     title = forms.CharField(max_length=64,
     widget=forms.TextInput(attrs={'class': 'form-control form-control-lg'}))
@@ -8,9 +7,6 @@ class AdvertisementForm(forms.Form):
     price = forms.BooleanField(
         widget=forms.NumberInput(attrs={'class': 'form-control form-control-lg'}))
     auction = forms.BooleanField(required=False,
-        widget=forms.CheckboxInput(attrs={'class': 'form-check-input'})
-    )
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
     image = forms.ImageField(
-        widget=forms.FileInput(attrs={'class': 'form-control form-control-lg'})
-    )
-
+        widget=forms.FileInput(attrs={'class': 'form-control form-control-lg'}))
